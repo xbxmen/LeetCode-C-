@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+#include <stdlib.h>
+
+#include <fstream>
+#include <iostream>
+#include <vector>
+
+int main() {
+  int a = 10;
+
+  int* p;
+  p = &a;  //指针指向数据a的地址
+
+  cout << *p << endl;  //* 解引用
+  cout << sizeof(p) << endl;
+  cout << sizeof(char*) << endl;
+  cout << sizeof(float*) << endl;
+  cout << sizeof(double*) << endl;
+
+  return 0;
+}
