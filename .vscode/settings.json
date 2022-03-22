@@ -5,6 +5,8 @@
         "*.wxs": "javascript",
         "iostream": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "__bit_reference": "cpp",
+        "algorithm": "cpp"
     }
 }
