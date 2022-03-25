@@ -8,5 +8,9 @@
         "vector": "cpp",
         "__bit_reference": "cpp",
         "algorithm": "cpp"
-    }
+    },
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false
 }
