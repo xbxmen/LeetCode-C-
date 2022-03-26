@@ -15,6 +15,7 @@ void QuickSort(vector<int>& nums, int left, int right) {
   int i = left;
   int j = right;
 
+  // 左右双指针
   int flag = nums[left];
   while (left < right) {
     while (left < right && nums[right] > flag) {
@@ -40,9 +41,42 @@ void QuickSort(vector<int>& nums, int left, int right) {
   QuickSort(nums, center + 1, j);
 }
 
+// 单边循环法
+void QuickSort2(vector<int>& nums, int left, int right) {
+  if (left >= right) {
+    return;
+  }
+
+  int i = left;
+  int j = right;
+
+  // 分治（单边循环法）
+  int mark = left;
+  int flag = nums[left];
+
+  int index = left + 1;
+  while (index <= right) {
+    if (nums[index] < flag) {
+      mark++;
+      int tmp = nums[mark];
+      nums[mark] = nums[index];
+      nums[index] = tmp;
+    }
+
+    index++;
+  }
+  nums[left] = nums[mark];
+  nums[mark] = flag;
+
+  // 获取center
+  int center = mark;
+  QuickSort(nums, i, center - 1);
+  QuickSort(nums, center + 1, j);
+}
+
 int main() {
-  vector<int> nums = {3, 11, 2, 1, 2, 9, 5};
-  QuickSort(nums, 0, nums.size() - 1);
+  vector<int> nums = {3, 11, 2, 1, 2, 9, 7, 5};
+  QuickSort2(nums, 0, nums.size() - 1);
   for (int i = 0; i < nums.size(); i++) {
     cout << nums[i] << " ";
   }
