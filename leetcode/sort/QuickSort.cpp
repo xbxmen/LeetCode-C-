@@ -70,8 +70,8 @@ void QuickSort2(vector<int>& nums, int left, int right) {
 
   // 获取center
   int center = mark;
-  QuickSort(nums, i, center - 1);
-  QuickSort(nums, center + 1, j);
+  QuickSort2(nums, i, center - 1);
+  QuickSort2(nums, center + 1, j);
 }
 
 int main() {
