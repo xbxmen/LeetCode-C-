@@ -5,6 +5,7 @@ using namespace std;
 // 堆排序
 // 不稳定
 
+// 最大堆
 // 向下调整
 void AjustDown(vector<int>& nums, int index) {
   int parent = nums[index];
@@ -36,10 +37,54 @@ void HeapSort(vector<int>& nums) {
   }
 }
 
+// 删除最大值
+void DeleMaxValue(vector<int>& nums) {
+  nums[0] = 0;
+  AjustDown(nums, 0);
+  nums.pop_back();
+}
+
+// 在最大堆基础上添加一个值
+// 向上调整
+void AjustUp(vector<int>& nums, int index) {
+  int new_value = nums[index];
+
+  int parent_index = (index - 1) / 2;
+  while (index > 0) {
+    if (nums[parent_index] > new_value) {
+      break;
+    }
+
+    nums[index] = nums[parent_index];
+    index = parent_index;
+    parent_index = (index - 1) / 2;
+  }
+
+  nums[index] = new_value;
+}
+
+// 添加一个元素
+void AddValue(vector<int>& nums) {
+  nums.push_back(100);
+  AjustUp(nums, nums.size() - 1);
+}
+
 int main() {
   vector<int> nums = {3, 11, 2, 1, 2, 9, 5};
 
   HeapSort(nums);
+  for (int i = 0; i < nums.size(); i++) {
+    cout << nums[i] << " ";
+  }
+  cout << endl;
+
+  DeleMaxValue(nums);
+  for (int i = 0; i < nums.size(); i++) {
+    cout << nums[i] << " ";
+  }
+
+  cout << endl;
+  AddValue(nums);
   for (int i = 0; i < nums.size(); i++) {
     cout << nums[i] << " ";
   }
