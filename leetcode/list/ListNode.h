@@ -1,10 +1,8 @@
+// Definition for singly-linked list.
 struct ListNode {
-  int value;
+  int val;
   ListNode* next;
-
-  //构造函数
-  ListNode(int value_l, ListNode* next_ptr = nullptr) {
-    value = value_l;
-    next = next_ptr;
-  }
+  ListNode() : val(0), next(nullptr) {}
+  ListNode(int x) : val(x), next(nullptr) {}
+  ListNode(int x, ListNode* next) : val(x), next(next) {}
 };

@@ -1,5 +1,4 @@
-#include <iosteam>
-
+#include <iostream>
 #include <stack>
 
 #include "ListNode.h"
@@ -45,12 +44,14 @@ ListNode* Reverse3(ListNode* head) {
   }
 
   if (!st.empty()) {
-    head = st.pop();
+    head = st.top();
+    st.pop();
   }
   ListNode* reverse = head;
   while (!st.empty()) {
-    reverse->next = st.pop();
+    reverse->next = st.top();
     reverse = reverse->next;
+    st.pop();
   }
 
   return head;
