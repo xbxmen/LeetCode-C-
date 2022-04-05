@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+#include <queue>
 #include <stack>
 
 #include "TreeNode.h"
@@ -9,7 +10,10 @@
 using namespace std;
 // 二叉树遍历
 
-// 前序遍历
+/**
+ * 前序遍历
+ */
+// 递归遍历
 vector<int> preorderTraversal(TreeNode* root) {
   vector<int> vec;
   preOrder(root, vec);
@@ -27,7 +31,7 @@ void preOrder(TreeNode* root, vector<int>& vec) {
   preOrder(root->right, vec);
 }
 
-// 前序遍历
+// 非递归遍历
 vector<int> preorderTraversal2(TreeNode* root) {
   vector<int> vec;
   if (root == nullptr) {
@@ -140,6 +144,35 @@ vector<int> postorderTraversal2(TreeNode* root) {
   }
 
   reverse(vec.begin(), vec.end());
+
+  return vec;
+}
+
+/**
+ * 层序遍历
+ */
+vector<int> levelTraverasal(TreeNode* root) {
+  vector<int> vec;
+  if (root == nullptr) {
+    return vec;
+  }
+
+  queue<TreeNode*> que;
+
+  que.push(root);
+  while (!que.empty()) {
+    TreeNode* tmp = que.front();
+    que.pop();
+    vec.push_back(tmp->val);
+
+    if (tmp->left != nullptr) {
+      que.push(tmp->left);
+    }
+
+    if (tmp->right != nullptr) {
+      que.push(tmp->right);
+    }
+  }
 
   return vec;
 }
