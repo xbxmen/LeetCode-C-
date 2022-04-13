@@ -6,6 +6,7 @@
 
 #include "TreeNode.h"
 
+// 思路
 class Solution {
  public:
   vector<vector<int>> ret;
@@ -16,6 +17,8 @@ class Solution {
     path = {};
   }
 
+  // 深度优先遍历
+  // 遍历到叶子节点停止，如果到当前叶子节点的和为target，则将整体路径放入到结果中
   void dfs(TreeNode* root, int target) {
     if (root == nullptr) {
       return;

@@ -58,9 +58,7 @@ void QuickSort2(vector<int>& nums, int left, int right) {
   while (index <= right) {
     if (nums[index] < flag) {
       mark++;
-      int tmp = nums[mark];
-      nums[mark] = nums[index];
-      nums[index] = tmp;
+      swap(nums[mark], nums[index]);
     }
 
     index++;
@@ -74,9 +72,33 @@ void QuickSort2(vector<int>& nums, int left, int right) {
   QuickSort2(nums, center + 1, j);
 }
 
+// ceshi
+void QuickSort3(vector<int>& input, int left, int right, int k) {
+  if (left >= right) {
+    return;
+  }
+
+  int mark = left;
+  int flag = input[left];
+
+  int index = left + 1;
+  while (index <= right) {
+    if (input[index] < flag) {
+      mark++;
+      swap(input[index], input[mark]);
+    }
+    index++;
+  }
+  input[left] = input[mark];
+  input[mark] = flag;
+
+  QuickSort3(input, left, mark - 1, k);
+  QuickSort3(input, mark + 1, right, k);
+}
+
 int main() {
   vector<int> nums = {3, 11, 2, 1, 2, 9, 7, 5};
-  QuickSort2(nums, 0, nums.size() - 1);
+  QuickSort3(nums, 0, nums.size() - 1, 4);
   for (int i = 0; i < nums.size(); i++) {
     cout << nums[i] << " ";
   }
