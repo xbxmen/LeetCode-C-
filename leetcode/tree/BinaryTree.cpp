@@ -67,11 +67,11 @@ vector<int> inorderTraversal(TreeNode* root) {
 
   return vec;
 }
+
 void inOrder(TreeNode* root, vector<int>& vec) {
   if (root == nullptr) {
     return;
   }
-
   inOrder(root->left, vec);
   vec.push_back(root->val);
   inOrder(root->right, vec);

@@ -7,10 +7,14 @@ using namespace std;
 #include <vector>
 
 int main() {
-  // int a = 10;
+  int a = 10;
 
-  // int* p;
-  // p = &a;  //指针指向数据a的地址
+  int* p;
+  p = &a;  //指针指向数据a的地址
+  int* pr = p;
+  if (pr == p) {
+    cout << 123;
+  }
 
   // cout << *p << endl;  //* 解引用
   // cout << sizeof(p) << endl;

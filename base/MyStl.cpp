@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 
@@ -12,5 +13,18 @@ int main() {
   while (!que.empty()) {
     cout << que.top() << ' ';
     que.pop();
+  }
+
+  unordered_map<int, int> ok;
+
+  ok[123] = 123;
+  ok[12] = 12;
+  for (auto iter = ok.begin(); iter != ok.end(); iter++) {
+    cout << "<" << iter->first << ", " << iter->second << ">" << endl;
+  }
+
+  ok.erase(12);
+  for (auto iter = ok.begin(); iter != ok.end(); iter++) {
+    cout << "<" << iter->first << ", " << iter->second << ">" << endl;
   }
 }

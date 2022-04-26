@@ -74,7 +74,9 @@
         "__functional_03": "cpp",
         "memory_resource": "cpp",
         "filesystem": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "__memory": "cpp",
+        "list": "cpp"
     },
     "python.linting.pycodestyleEnabled": false,
     "python.linting.pylintEnabled": true,
