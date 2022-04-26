@@ -14,7 +14,8 @@ class Solution {
       if (i > cur_index && nums[i] == nums[i - 1])  //剪枝去重
         continue;
       path.push_back(nums[i]);
-      dfs(nums, path, cur_index + 1);
+      cur_index++;
+      dfs(nums, path, cur_index);
       path.pop_back();
     }
   }
@@ -28,4 +29,19 @@ class Solution {
   }
 };
 
-int main() {}
+int main() {
+  Solution s;
+  vector<vector<int>> res;
+
+  vector<int> nums = {1, 2, 3, 4};
+  res = s.subsets(nums);
+
+  for (size_t i = 0; i < res.size(); i++) {
+    vector<int> tmp = res[i];
+    for (auto j = tmp.begin(); j < tmp.end(); j++) {
+      cout << *j << " ";
+    }
+
+    cout << endl;
+  }
+}
