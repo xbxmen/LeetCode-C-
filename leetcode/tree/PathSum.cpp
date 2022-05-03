@@ -23,6 +23,7 @@ class Solution {
     if (root == nullptr) {
       return;
     }
+    
     path.emplace_back(root->val);
     target -= root->val;
     if (root->left == nullptr && root->right == nullptr && target == 0) {

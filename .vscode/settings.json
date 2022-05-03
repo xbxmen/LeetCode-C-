@@ -76,7 +76,8 @@
         "filesystem": "cpp",
         "queue": "cpp",
         "__memory": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "thread": "cpp"
     },
     "python.linting.pycodestyleEnabled": false,
     "python.linting.pylintEnabled": true,
