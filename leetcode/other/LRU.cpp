@@ -8,7 +8,11 @@ using namespace std;
  * int param_1 = obj->get(key);
  * obj->put(key,value);
  */
-
+/**
+ * 最近最少使用算法
+ * LRU (Least recently used) 最近最少使用，如果数据最近被访问过，那么将来被访问的几率也更高。
+ * 目的：LRU算法就是在缺页发生时首先置换最长时间未被使用的页面
+ */
 class LRUCache {
  private:
   //定义双向链表
@@ -32,7 +36,6 @@ class LRUCache {
   void insert(Node* p) {
     p->right = L->right;
     p->left = L;
-    L->right->left = p;
     L->right = p;
   }
 
