@@ -13,8 +13,7 @@ using namespace std;
 struct Node {
   int key, value;
   int frequency = 1;
-  Node *left, *right;
-  Node(int _key, int _value) : key(_key), value(_value), left(nullptr), right(nullptr) {}
+  Node(int _key, int _value) : key(_key), value(_value) {}
 };
 
 void bianli(const list<Node*> li) {
@@ -105,17 +104,14 @@ void LFU::put(const int& key, const int& value) {
 
 // 剔除元素
 void LFU::remove() {
-  cout << "remove" << endl;
   if (size < capacity) {
     return;
   }
 
-  cout << "remove1" << endl;
   list<Node*> li = freqMaps[minFreq];
   Node* del = li.front();
   li.pop_front();
   keyMaps.erase(del->key);
-  cout << "remove2" << endl;
   size--;
 }
 
@@ -127,8 +123,6 @@ void LFU::freqPlus(Node* node) {
     minFreq++;
   }
   freqMaps[freq] = oldList;
-
-  cout << "minFreq=" << minFreq << endl;
 
   // 把节点加到新的freq下面
   node->frequency++;

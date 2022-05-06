@@ -89,9 +89,11 @@ vector<int> inorderTraversal2(TreeNode* root) {
       cur = cur->left;
     }
 
-    cur = st.top();
-    st.pop();
-    vec.push_back(cur->val);
+    if (!st.empty()) {
+      cur = st.top();
+      st.pop();
+      vec.push_back(cur->val);
+    }
     cur = cur->right;
   }
 

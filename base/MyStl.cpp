@@ -14,6 +14,7 @@ void display(vector<int>& array) {
 
 int main() {
   priority_queue<int, vector<int>, greater<int>> que;
+  // priority_queue<int, vector<int>, less<int>> que;
   que.push(3);
   que.push(5);
   que.push(1);
