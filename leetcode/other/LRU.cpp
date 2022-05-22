@@ -21,12 +21,11 @@ class LRUCache {
     Node *left, *right;
     Node(int _key, int _value) : key(_key), value(_value), left(nullptr), right(nullptr) {}
   } * L, *R;  //双链表的最左和最右节点，不存贮值。
+  // 无须关联容器
+  unordered_map<int, Node*> hash;
 
   // 容量
   int n;
-
-  // 无须关联容器
-  unordered_map<int, Node*> hash;
 
   void remove(Node* p) {
     p->right->left = p->left;
