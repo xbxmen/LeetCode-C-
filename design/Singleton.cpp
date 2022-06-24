@@ -11,14 +11,21 @@ class Singleton {
 
   static Singleton* singleton_;
 
- public:
+ protected:
   Singleton(const std::string value) : value_(value) {}
   ~Singleton();
 
+ public:
   Singleton(Singleton& other) = delete;
   void operator=(const Singleton&) = delete;
 
   static Singleton* GetInstance(const std::string& value);
+
+  static void DeleteInstace() {
+    if (singleton_) {
+      delete singleton_;
+    }
+  }
 
   void SomeBusinessLogic() {
     // ...

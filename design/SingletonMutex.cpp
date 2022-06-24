@@ -71,6 +71,10 @@ std::mutex Singleton::mutex_;
  *      set the value. RU:
  */
 Singleton* Singleton::GetInstance(const std::string& value) {
+  if (pinstance_ != nullptr) {
+    return pinstance_;
+  }
+
   std::lock_guard<std::mutex> lock(mutex_);
   if (pinstance_ == nullptr) {
     pinstance_ = new Singleton(value);

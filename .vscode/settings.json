@@ -77,7 +77,8 @@
         "queue": "cpp",
         "__memory": "cpp",
         "list": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "condition_variable": "cpp"
     },
     "python.linting.pycodestyleEnabled": false,
     "python.linting.pylintEnabled": true,
