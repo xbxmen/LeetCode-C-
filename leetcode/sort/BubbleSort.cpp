@@ -7,7 +7,7 @@ using namespace std;
 
 // 时间复杂度 O(n2)
 // 选取
-void BubbleSort1(vector<int>& nums) {
+void BubbleSort1(vector<int> &nums) {
   int count = nums.size();
 
   for (int i = 0; i < count; i++) {
@@ -22,8 +22,8 @@ void BubbleSort1(vector<int>& nums) {
 }
 
 // 时间复杂度O(n2)
-// 
-void BubbleSort2(vector<int>& nums) {
+//
+void BubbleSort2(vector<int> &nums) {
   int count = nums.size();
   bool flag = true;
   while (flag) {
@@ -42,7 +42,7 @@ void BubbleSort2(vector<int>& nums) {
 
 // 时间复杂度O(n2)
 // 设置一个下标，记录最后换位的index，如果一次排序下来没有换位，说明已经有序
-void BubbleSort3(vector<int>& nums) {
+void BubbleSort3(vector<int> &nums) {
   int count = nums.size();
   while (count > 0) {
     int index = 0;
@@ -62,7 +62,7 @@ void BubbleSort3(vector<int>& nums) {
   }
 }
 
-void BubbleSort4(int* nums) { *nums = 123; }
+void BubbleSort4(int *nums) { *nums = 123; }
 
 int main() {
   vector<int> nums = {3, 11, 2, 1, 2, 9, 5};
@@ -72,7 +72,7 @@ int main() {
   }
 
   int qwe = 1;
-  int* pr = &qwe;
+  int *pr = &qwe;
   BubbleSort4(pr);
   cout << qwe << endl;
   *pr = 111111;

@@ -2,39 +2,39 @@
 using namespace std;
 
 class A {
- public:
+public:
   A() {}
   int Hellon();
 };
 
 class A1 {
- public:
+public:
   A1() {}
 
- private:
+private:
   int a;
 };
 
 class A2 {
- public:
+public:
   A2() {}
 
- private:
+private:
   int a;
   int b;
 };
 
 class A3 {
- public:
+public:
   A3() {}
 
- private:
+private:
   int a;
   static int b;
 };
 
 class A4 {
- public:
+public:
   A4() {}
   virtual int qwe();
 
@@ -46,7 +46,7 @@ class A4 {
 int main() {
   A a;
   cout << "A: " << sizeof(A) << endl;
-  cout << "a: " << sizeof(A) << endl;
+  cout << "a: " << sizeof(a) << endl;
 
   A1 a1;
   cout << "A1: " << sizeof(A1) << endl;
@@ -61,5 +61,7 @@ int main() {
   cout << "a3: " << sizeof(A3) << endl;
 
   cout << "A4: " << sizeof(A4) << endl;
+  cout << "A41111111111111111111: " << sizeof(A4) << endl;
+
   return 0;
 }

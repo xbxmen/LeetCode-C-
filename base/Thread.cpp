@@ -1,8 +1,10 @@
 #include <iostream>
 #include <mutex>
 #include <thread>
+
 using namespace std;
-mutex m;  //实例化m对象，不要理解为定义变量
+
+mutex m; //实例化m对象，不要理解为定义变量
 void proc1(int a) {
   m.lock();
   cout << "proc1函数正在改写a" << endl;

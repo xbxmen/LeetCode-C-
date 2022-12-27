@@ -2,22 +2,22 @@
 
 // 单例模式
 class SingleIns {
- private:
-  static SingleIns* ptr;
+private:
+  static SingleIns *ptr;
 
- protected:
+protected:
   SingleIns(/* args */);
   ~SingleIns();
 
- public:
-  static SingleIns* getInstance();
+public:
+  static SingleIns *getInstance();
 };
 
 SingleIns::SingleIns(/* args */) {}
 
 SingleIns::~SingleIns() {}
 
-SingleIns* SingleIns::getInstance() {
+SingleIns *SingleIns::getInstance() {
   if (ptr == nullptr) {
     ptr = new SingleIns();
   }
@@ -37,9 +37,9 @@ LRuCache {
     /* data */
   };
 
- private:
+private:
   ListNode *l, r;
-  unordered_map<int, ListNode*> hash;
+  unordered_map<int, ListNode *> hash;
 
   int n;
 }
@@ -67,7 +67,7 @@ mergesort(vector<int> num, int left, int right) {
 // 找到每个元素的一个状态转移公式
 // 分别对每个元素进行状态转移
 
-// 斐波那契额数列
+// 斐波那契数列
 // 1 2 3 4 5 6 7
 // f(n) = f(n - 1) + f(n - 2);
 

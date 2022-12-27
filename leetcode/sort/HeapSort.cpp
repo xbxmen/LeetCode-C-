@@ -6,8 +6,14 @@ using namespace std;
 // 不稳定
 
 // 最大堆
-// 向下调整
-void AjustDown(vector<int>& nums, int index) {
+
+/**
+ * @brief 向下调整
+ *
+ * @param nums
+ * @param index
+ */
+void AjustDown(vector<int> &nums, int index) {
   int parent = nums[index];
 
   int child_index = index * 2 + 1;
@@ -29,24 +35,35 @@ void AjustDown(vector<int>& nums, int index) {
   nums[index] = parent;
 }
 
-// 复杂度：O(nlog(n))
-void HeapSort(vector<int>& nums) {
+/**
+ * @brief 复杂度：O(nlog(n))
+ *
+ */
+void HeapSort(vector<int> &nums) {
   int size = nums.size();
   for (int i = size / 2; i >= 0; i--) {
     AjustDown(nums, i);
   }
 }
 
-// 删除最大值
-void DeleMaxValue(vector<int>& nums) {
+/**
+ * @brief 删除最大值
+ *
+ * @param nums
+ */
+void DeleMaxValue(vector<int> &nums) {
   nums[0] = 0;
   AjustDown(nums, 0);
   nums.pop_back();
 }
 
-// 在最大堆基础上添加一个值
-// 向上调整
-void AjustUp(vector<int>& nums, int index) {
+/**
+ * @brief 向上调整
+ *
+ * @param nums
+ * @param index
+ */
+void AjustUp(vector<int> &nums, int index) {
   int new_value = nums[index];
 
   int parent_index = (index - 1) / 2;
@@ -63,8 +80,12 @@ void AjustUp(vector<int>& nums, int index) {
   nums[index] = new_value;
 }
 
-// 添加一个元素
-void AddValue(vector<int>& nums) {
+/**
+ * @brief 在最大堆基础上添加一个值
+ *
+ * @param nums
+ */
+void AddValue(vector<int> &nums) {
   nums.push_back(100);
   AjustUp(nums, nums.size() - 1);
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ostream>
 #include <vector>
 using namespace std;
 
@@ -7,7 +8,7 @@ using namespace std;
 
 // 时间复杂度 O(nlog(n))，最坏情况下：Q(n2)
 // 双指针
-void QuickSort(vector<int>& nums, int left, int right) {
+void QuickSort(vector<int> &nums, int left, int right) {
   if (left >= right) {
     return;
   }
@@ -42,7 +43,7 @@ void QuickSort(vector<int>& nums, int left, int right) {
 }
 
 // 单边循环法
-void QuickSort2(vector<int>& nums, int left, int right) {
+void QuickSort2(vector<int> &nums, int left, int right) {
   if (left >= right) {
     return;
   }
@@ -73,7 +74,7 @@ void QuickSort2(vector<int>& nums, int left, int right) {
 }
 
 // ceshi
-void QuickSort3(vector<int>& input, int left, int right, int k) {
+void QuickSort3(vector<int> &input, int left, int right) {
   if (left >= right) {
     return;
   }
@@ -89,19 +90,29 @@ void QuickSort3(vector<int>& input, int left, int right, int k) {
     }
     index++;
   }
+
+  for (int i = 0; i < input.size(); i++) {
+    cout << input[i] << " ";
+  }
+  cout << endl;
   input[left] = input[mark];
   input[mark] = flag;
 
-  QuickSort3(input, left, mark - 1, k);
-  QuickSort3(input, mark + 1, right, k);
+  for (int i = 0; i < input.size(); i++) {
+    cout << input[i] << " ";
+  }
+
+  return;
+  QuickSort3(input, left, mark - 1);
+  QuickSort3(input, mark + 1, right);
 }
 
 int main() {
   vector<int> nums = {3, 11, 2, 1, 2, 9, 7, 5};
-  QuickSort3(nums, 0, nums.size() - 1, 4);
-  for (int i = 0; i < nums.size(); i++) {
-    cout << nums[i] << " ";
-  }
+  QuickSort3(nums, 0, nums.size() - 1);
+  // for (int i = 0; i < nums.size(); i++) {
+  //   cout << nums[i] << " ";
+  // }
 
   return 0;
 }

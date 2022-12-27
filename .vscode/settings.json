@@ -78,7 +78,8 @@
         "__memory": "cpp",
         "list": "cpp",
         "thread": "cpp",
-        "condition_variable": "cpp"
+        "condition_variable": "cpp",
+        "set": "cpp"
     },
     "python.linting.pycodestyleEnabled": false,
     "python.linting.pylintEnabled": true,

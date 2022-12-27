@@ -14,14 +14,14 @@ using namespace std;
  * 前序遍历
  */
 // 递归遍历
-vector<int> preorderTraversal(TreeNode* root) {
+vector<int> preorderTraversal(TreeNode *root) {
   vector<int> vec;
   preOrder(root, vec);
 
   return vec;
 }
 
-void preOrder(TreeNode* root, vector<int>& vec) {
+void preOrder(TreeNode *root, vector<int> &vec) {
   if (root == nullptr) {
     return;
   }
@@ -32,16 +32,16 @@ void preOrder(TreeNode* root, vector<int>& vec) {
 }
 
 // 非递归遍历
-vector<int> preorderTraversal2(TreeNode* root) {
+vector<int> preorderTraversal2(TreeNode *root) {
   vector<int> vec;
   if (root == nullptr) {
     return vec;
   }
 
-  stack<TreeNode*> st;
+  stack<TreeNode *> st;
   st.push(root);
   while (!st.empty()) {
-    TreeNode* tmp = st.top();
+    TreeNode *tmp = st.top();
     st.pop();
     vec.push_back(tmp->val);
 
@@ -61,14 +61,14 @@ vector<int> preorderTraversal2(TreeNode* root) {
  * 中序遍历
  */
 // 递归遍历
-vector<int> inorderTraversal(TreeNode* root) {
+vector<int> inorderTraversal(TreeNode *root) {
   vector<int> vec;
   inOrder(root, vec);
 
   return vec;
 }
 
-void inOrder(TreeNode* root, vector<int>& vec) {
+void inOrder(TreeNode *root, vector<int> &vec) {
   if (root == nullptr) {
     return;
   }
@@ -78,11 +78,11 @@ void inOrder(TreeNode* root, vector<int>& vec) {
 }
 
 // 非递归遍历
-vector<int> inorderTraversal2(TreeNode* root) {
+vector<int> inorderTraversal2(TreeNode *root) {
   vector<int> vec;
-  stack<TreeNode*> st;
+  stack<TreeNode *> st;
 
-  TreeNode* cur = root;
+  TreeNode *cur = root;
   while (cur != nullptr || !st.empty()) {
     while (cur != nullptr) {
       st.push(cur);
@@ -104,14 +104,14 @@ vector<int> inorderTraversal2(TreeNode* root) {
  * 后序遍历
  */
 // 递归遍历
-vector<int> postorderTraversal(TreeNode* root) {
+vector<int> postorderTraversal(TreeNode *root) {
   vector<int> vec;
   postOrder(root, vec);
 
   return vec;
 }
 
-void postOrder(TreeNode* root, vector<int>& vec) {
+void postOrder(TreeNode *root, vector<int> &vec) {
   if (root == nullptr) {
     return;
   }
@@ -124,16 +124,16 @@ void postOrder(TreeNode* root, vector<int>& vec) {
 // 非递归遍历
 // 将前序遍历 逆转
 // 中左右 -> 中右左 -> 左右中
-vector<int> postorderTraversal2(TreeNode* root) {
+vector<int> postorderTraversal2(TreeNode *root) {
   vector<int> vec;
   if (root == nullptr) {
     return vec;
   }
 
-  stack<TreeNode*> st;
+  stack<TreeNode *> st;
   st.push(root);
   while (!st.empty()) {
-    TreeNode* tmp = st.top();
+    TreeNode *tmp = st.top();
     st.pop();
     vec.push_back(tmp->val);
 
@@ -154,17 +154,17 @@ vector<int> postorderTraversal2(TreeNode* root) {
 /**
  * 层序遍历
  */
-vector<int> levelTraverasal(TreeNode* root) {
+vector<int> levelTraverasal(TreeNode *root) {
   vector<int> vec;
   if (root == nullptr) {
     return vec;
   }
 
-  queue<TreeNode*> que;
+  queue<TreeNode *> que;
 
   que.push(root);
   while (!que.empty()) {
-    TreeNode* tmp = que.front();
+    TreeNode *tmp = que.front();
     que.pop();
     vec.push_back(tmp->val);
 
@@ -182,7 +182,6 @@ vector<int> levelTraverasal(TreeNode* root) {
 
 int main() {
   cout << abs(3 - 8);
-
   cout << max(1, 3);
   return 0;
 }
