@@ -6,24 +6,27 @@
 
 #include "TreeNode.h"
 
+using namespace std;
+
 class Solution {
- public:
-  vector<int> rightSideView(TreeNode* root) {
-    vector<int> vec;
+public:
+  vector<int> rightSideView(TreeNode *root) {
+    vector<int> ret;
     if (root == nullptr) {
-      return vec;
+      return ret;
     }
 
-    deque<TreeNode*> que;
+    deque<TreeNode *> que;
     que.push_back(root);
     while (!que.empty()) {
-      deque<TreeNode*> que_tmp;
+      deque<TreeNode *> que_tmp;
       while (!que.empty()) {
-        TreeNode* tmp = que.front();
+        TreeNode *tmp = que.front();
         que.pop_front();
         if (que.empty()) {
-          vec.push_back(tmp->val);
+          ret.push_back(tmp->val);
         }
+
         if (tmp->left != nullptr) {
           que_tmp.push_back(tmp->left);
         }
@@ -35,14 +38,11 @@ class Solution {
       que = que_tmp;
     }
 
-    return vec;
+    return ret;
   }
 };
 
 /**
   1
 2   3
-
-
-
 */
